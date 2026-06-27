@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用者狀態測試</title>
+</head>
+<body>
+    <h2>發送 Request 測試結果</h2>
+    <div>
+        <button onclick="hello();">Hello</button>
+        <button onclick="talk();">Talk</button>
+    </div>
+    <script>
+        async function hello(){
+            let response = await fetch("/hello?name=澎澎",{
+                method:"GET"
+            })
+            let result = await response.json();
+            console.log(result);
+        }
+        async function talk(){
+            let response = await fetch("/talk",{
+                method:"GET"
+            })
+            let result = await response.json();
+            console.log();
+        }
+    </script>
+</body>
+</html>
